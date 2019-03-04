@@ -1,0 +1,17 @@
+Package: watson.kernel
+Type: Package
+Title: A package to calculate the kernel density estimates using the
+        Watson kernel
+Version: 1.0
+Author: Nishan Mudalige, Peter Kim
+Maintainer: Nishan Mudalige <mudalign@uoguelph.ca>
+Description: A package to calculate the kernel density estimates for data over S^(p-1) using the Watson kernel density estimator
+License: GNU GPLv3 <https://www.gnu.org/licenses/gpl-3.0.en.html>
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.5.1)
+Imports: hypergeo, fAsianOptions, BAS
+RoxygenNote: 6.1.1
+NeedsCompilation: no
+Packaged: 2019-03-04 01:07:54 UTC; nishan
+Built: R 3.5.1; ; 2019-03-04 01:08:22 UTC; unix
