@@ -1,0 +1,4 @@
+mwatson.tune            A function to calulate the bandwidth for the
+                        Watson kernel density estimator
+w.kde                   A function to obtain kernel density values
+                        using the Watson kernel density estimator
