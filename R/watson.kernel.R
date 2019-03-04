@@ -1,9 +1,9 @@
 library(hypergeo)
 library(fAsianOptions)
-library(BAS)
 
 # Modified by examining code in the function vmfkde.tune in the Directional Package
-# Credit to the following authors: Michail Tsagris, Giorgos Athineou, Anamul Sajib, Eli Amson, Micah J. Waldstein
+# Credit to the following authors of the Directional package: 
+# Michail Tsagris, Giorgos Athineou, Anamul Sajib, Eli Amson, Micah J. Waldstein
 
 mwatson.tune = function (x, low = 0.1, up = 1) {
   p <- dim(x)[2]
@@ -27,7 +27,8 @@ mwatson.tune = function (x, low = 0.1, up = 1) {
 
 
 # Modified by examining code in the function vmf.kde in the Directional Package
-# Credit to the following authors: Michail Tsagris, Giorgos Athineou, Anamul Sajib, Eli Amson, Micah J. Waldstein
+# Credit to the following authors of the Directional package: 
+# Michail Tsagris, Giorgos Athineou, Anamul Sajib, Eli Amson, Micah J. Waldstein
 
 w.kde = function (x, h = NULL) {
   p <- dim(x)[2]
