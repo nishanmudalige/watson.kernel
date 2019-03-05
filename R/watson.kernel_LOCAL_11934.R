@@ -3,13 +3,13 @@ library(fAsianOptions)
 
 # Modified by examining code in the function vmfkde.tune in the Directional Package
 # Credit to the following authors of the Directional package: 
-# Tsagris, M., Athineou, G., Sajib, A., Amson, E. Waldstein, M.J.
+# Michail Tsagris, Giorgos Athineou, Anamul Sajib, Eli Amson, Micah J. Waldstein
 
 mwatson.tune = function (x, low = 0.1, up = 1) {
   p = dim(x)[2]
   n = dim(x)[1]
   d = tcrossprod(x) * tcrossprod(x)
-
+  
   # Square here to avoid NAN warning
   diag(d) = NA
   con = 2*(pi)^(p/2)
@@ -24,14 +24,13 @@ mwatson.tune = function (x, low = 0.1, up = 1) {
   a = optimize(funa, c(low, up), maximum = TRUE)
   res = c(a$maximum, a$objective)
   names(res) = c("Optimal h", "cv")
-
   res
 }
 
 
 # Modified by examining code in the function vmf.kde in the Directional Package
 # Credit to the following authors of the Directional package: 
-# Tsagris, M., Athineou, G., Sajib, A., Amson, E. Waldstein, M.J.
+# Michail Tsagris, Giorgos Athineou, Anamul Sajib, Eli Amson, Micah J. Waldstein
 
 w.kde = function (x, h = NULL) {
   p = dim(x)[2]
@@ -44,7 +43,7 @@ w.kde = function (x, h = NULL) {
   }
   
   d = (tcrossprod(x) * tcrossprod(x))/h^2
-
+  
   mpk = gamma(p/2)/( 2*(pi)^(p/2) * Re(fAsianOptions::kummerM(1/h^2, 1/2, p/2)) )
   f = Rfast::rowmeans(exp(d + log(mpk) ))
   list(h = h, f = f)
